@@ -11,7 +11,7 @@ namespace App\Campaign\Controllers;
  *
  * http://yoox.rice5.com.cn/campaign/love/weixinauthorizebefore?operation4cookie=store&FromUserName=xxxx&nickname=xx&headimgurl=xx
  *
- * http://yoox.rice5.com.cn/html/love/index.html
+ * http://yoox.rice5.com.cn/love/index.html
  *
  * http://yoox.rice5.com.cn/campaign/love/weixinauthorizebefore?operation4cookie=store&FromUserName=ok0K2vystcQkKolNr3anJd-soVuI&nickname=郭永荣&headimgurl=xx
  *
@@ -600,8 +600,8 @@ class LoveController extends ControllerBase
     {
         // $code = rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10); // 优惠码
         $phone = '0086' . $phone; // 手机号码前面必须带0086
-        $message = '【YOOX】恭喜您获得一份来自意大利YOOX.CN的时尚新年礼，您的专属折上折优惠码' . $code . '！即日起至2017年1月20日前往YOOX.CN（http://t.cn/RMIDxxW）选购心仪单品，结算时输入该代码，季末特惠商品除外。感谢您的参与！';
         $url = 'https://api.spl4cn.com/api/forwardsms/1.php?universe=yoox_cn&key=29ef24d1b10b352939268cbf1a593a7e5dab8672&recipient=' . $phone . '&message=' . $message . '&unicode=1&long=1'; // 链接地址
+        $message = '【YOOX】恭喜您获得YOOX七夕约惠礼，您的专属折上折优惠码' . $code . '！即日起至2017年8月21日前往YOOX.CN（http://t.cn/RMIDxxW）选购心仪单品，结算时输入该代码，特惠商品除外。感谢您的参与！';
         
         $client = new \GuzzleHttp\Client();
         $response = $client->get($url, array());
