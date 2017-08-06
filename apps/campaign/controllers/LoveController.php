@@ -275,7 +275,7 @@ class LoveController extends ControllerBase
                 return false;
             }
             
-            if (isset($userInfo['memo'][$this->today]) && intval($userInfo['memo'][$this->today]) > 3) {
+            if (isset($userInfo['memo'][$this->today]) && intval($userInfo['memo'][$this->today]) > 100) {
                 echo $this->error(- 40433, '该用户已达到每天3次的抽奖次数限制');
                 return false;
             }
@@ -306,8 +306,7 @@ class LoveController extends ControllerBase
                 $successInfo = $lotteryResult['result'];
                 $ret = $this->getPrizeInfo($successInfo);
                 echo ($this->result("OK", $ret));
-                fastcgi_finish_request();
-                
+                fastcgi_finish_request();                
                 return true;
             } else {
                 // 失败的话
