@@ -78,7 +78,7 @@ class iLock
         if ($this->_isInstance) {
             throw new \Exception('每个iLock实例只能lock一次，当一个请求中需要多次锁定时，请分别实例化iLock类');
         }
-        
+        $casToken = null;
         try {
             $this->_isInstance = true;
             do {

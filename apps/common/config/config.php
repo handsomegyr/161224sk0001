@@ -34,7 +34,7 @@ return new \Phalcon\Config(array(
     ),
     'weixin' => array(
         "appid" => 'wxce4c6068d982ad73',
-        "get_accesstoken_url" => "http://yoox.rice5.com.cn/weixin/index/get-access-token",
+        "get_accesstoken_url" => "http://yoox.rice5.com.cn/weixin/index/getaccesstoken",
         'openid4developer' => 'on8S7uINhQNNenv2AUE7ytD18eNs'
     ),
     'weixinAuthorize' => array(
