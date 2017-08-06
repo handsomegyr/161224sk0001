@@ -79,6 +79,9 @@ class WeixinPlugin2 extends Plugin
                 unset($_SESSION['isAuthorizing']);
                 print_r($_COOKIE);
                 die('cookie has been success to clear');
+            } elseif ($operation4cookie == 'get') { // 情况测试用cookie
+                print_r($_COOKIE);
+                die('cookie has been success to get');
             }
         }
     }

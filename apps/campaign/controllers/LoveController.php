@@ -9,6 +9,8 @@ namespace App\Campaign\Controllers;
  *
  * http://yoox.rice5.com.cn/campaign/love/weixinauthorizebefore?operation4cookie=clear
  *
+ * http://yoox.rice5.com.cn/campaign/love/weixinauthorizebefore?operation4cookie=get
+ *
  * http://yoox.rice5.com.cn/campaign/love/weixinauthorizebefore?operation4cookie=store&FromUserName=xxxx&nickname=xx&headimgurl=xx
  *
  * http://yoox.rice5.com.cn/love/index.html
