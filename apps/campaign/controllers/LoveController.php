@@ -35,7 +35,7 @@ class LoveController extends ControllerBase
     protected $serviceLottery = null;
     
     // 活动ID
-    protected $activity_id = '59815fe71653c123506d51a1';
+    protected $activity_id = '5986a14e4a4fe406e2466e04';
     
     // 是否需要微信公众号关注
     private $is_need_subscribed = false;
@@ -69,7 +69,8 @@ class LoveController extends ControllerBase
     public function indexAction()
     {
         try {
-            die('index');
+            $objID = new \MongoId('5986a0d24a4fe406dc40c6f1');
+            die('index' . $objID->__toString());
         } catch (\Exception $e) {
             die($e->getMessage());
         }
@@ -139,6 +140,13 @@ class LoveController extends ControllerBase
             $prizeRemainNum = 0; // $this->getPrizeRemainNum();
                                  
             // 返回值
+                                 
+            // 当天已经抽奖的次数
+            $today_lottery_num = 0;
+            if (isset($userInfo['memo'][$this->today])) {
+                $today_lottery_num = intval($userInfo['memo'][$this->today]);
+            }
+            
             $ret = array(
                 // 活动信息
                 'activityInfo' => $activityInfo,
@@ -155,11 +163,14 @@ class LoveController extends ControllerBase
                     // 是否已经填写了中奖联系信息
                     'is_record_lottery_user_contact_info' => empty($userInfo['memo']['is_record_lottery_user_contact_info']) ? 0 : 1,
                     // 抽奖机会，当worth为0是说明不能再抽奖了
-                    'worth' => $userInfo['worth'],
+                    'worth' => 1,
+                    // 当天已经抽奖的次数
+                    'today_lottery_num' => $today_lottery_num,
                     // 中奖奖品信息
                     'prizeInfo' => empty($userInfo['memo']['prizeInfo']) ? '' : $this->getPrizeInfo($userInfo['memo']['prizeInfo'])
                 )
             );
+            
             echo $this->result("OK", $ret);
             return true;
         } catch (\Exception $e) {

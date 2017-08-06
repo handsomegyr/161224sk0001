@@ -5,9 +5,13 @@ class MongoId
 
     protected $objId = null;
 
-    public function __construct(string $id = '')
+    public function __construct($id = "")
     {
-        $this->objId = new \MongoDB\BSON\ObjectID($id);
+        if (empty($id)) {
+            $this->objId = new \MongoDB\BSON\ObjectID();
+        } else {
+            $this->objId = new \MongoDB\BSON\ObjectID($id);
+        }
     }
 
     public function __toString()
