@@ -1,0 +1,62 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "b8371481e3d495a86cbb4442d5d2cb2a",
+    "content-hash": "c8d4751b8dc076a1a8a94ad967652e87",
+    "packages": [
+        {
+            "name": "handsomegyr/model",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/handsomegyr/models.git",
+                "reference": "7b5c08357ecadb770ae1140284a9e6050b621dac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/handsomegyr/models/zipball/7b5c08357ecadb770ae1140284a9e6050b621dac",
+                "reference": "7b5c08357ecadb770ae1140284a9e6050b621dac",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "App": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "郭永荣",
+                    "email": "handsomegyr@gmail.com",
+                    "homepage": "http://github.com/handsomegyr/"
+                }
+            ],
+            "description": "A simple PHP model library for Business",
+            "homepage": "http://github.com/handsomegyr/models",
+            "keywords": [
+                "model"
+            ],
+            "time": "2017-01-04 12:25:22"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "handsomegyr/model": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

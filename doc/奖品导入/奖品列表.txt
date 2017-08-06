@@ -1,0 +1,22 @@
+奖品名称
+
+特等奖：意大利米兰双人往返机票    1个   概率 0%
+一等奖：YOOX.CN额外85折优惠码    5000个 概率 50%
+二等奖：YOOX.CN额外9折优惠码     3000个 概率 30%
+三等奖：YOOX.CN额外95折优惠码    2000个 概率 20%
+
+
+
+
+一等奖：YOOX.CN额外85折优惠码  对应的excel名称 5000 CODES 15OFF.xlsx
+
+二等奖：YOOX.CN额外9折优惠码   对应的excel名称 3000 CODES 10OFF.xlsx
+
+三等奖：YOOX.CN额外95折优惠码  对应的excel名称 2000 CODES 5OFF.xlsx
+
+
+
+
+
+
+

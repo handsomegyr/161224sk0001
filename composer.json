@@ -1,0 +1,6 @@
+{
+    "require": {
+        "handsomegyr/model": "dev-master",
+        "handsomegyr/wechat": "dev-master"
+    }
+}
