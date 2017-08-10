@@ -406,6 +406,7 @@ class LoveController extends ControllerBase
             
             // 检查手机号是否使用过了
             $isMobileExist = $this->modelLotteryExchange->findOne(array(
+                'activity_id' => $userInfo['activity_id'],
                 'contact_mobile' => $mobile,
                 'prize_is_virtual' => false
             ));
