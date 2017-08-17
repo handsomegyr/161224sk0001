@@ -275,8 +275,8 @@ class LoveController extends ControllerBase
                 return false;
             }
             
-            if (isset($userInfo['memo'][$this->today]) && intval($userInfo['memo'][$this->today]) > 100) {
-                echo $this->error(- 40433, '该用户已达到每天3次的抽奖次数限制');
+            if (isset($userInfo['memo'][$this->today]) && intval($userInfo['memo'][$this->today]) >= 3) {
+                echo $this->error(- 40433, '你的机会已经用完！<br>凌晨12点你将获得全新3次机会。<br>更多精品请关注我们的官方微信：yooxyooxyoox');
                 return false;
             }
             
@@ -603,7 +603,7 @@ class LoveController extends ControllerBase
     {
         // $code = rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10); // 优惠码
         $phone = '0086' . $phone; // 手机号码前面必须带0086
-        $message = '【YOOX】恭喜您获得YOOX七夕约惠礼，您的专属折上折优惠码' . $code . '！即日起至2017年8月21日前往YOOX.CN（http://t.cn/RMIDxxW）选购心仪单品，结算时输入该代码，特惠商品除外。感谢您的参与！';
+        $message = '【YOOX】恭喜您获得YOOX七夕约惠礼，您的专属优惠码' . $code . '！即日起至2017年8月31日前往YOOX中国官网（http://sep9.cn/npshgf）选购心仪单品，结算时输入该代码，特惠商品除外。感谢您的参与！';
         $url = 'https://api.spl4cn.com/api/forwardsms/1.php?universe=yoox_cn&key=29ef24d1b10b352939268cbf1a593a7e5dab8672&recipient=' . $phone . '&message=' . $message . '&unicode=1&long=1'; // 链接地址
         
         $client = new \GuzzleHttp\Client();
