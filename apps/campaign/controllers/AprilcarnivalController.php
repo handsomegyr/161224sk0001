@@ -5,22 +5,22 @@ namespace App\Campaign\Controllers;
  * 例子
  *
  * 授权地址
- * http://yoox.rice5.com.cn/campaign/cny2018/weixinauthorizebefore?callbackUrl=http%3A%2F%2Fwww.baidu.com%2F
+ * http://yoox.rice5.com.cn/campaign/aprilcarnival/weixinauthorizebefore?callbackUrl=http%3A%2F%2Fwww.baidu.com%2F
  *
- * http://yoox.rice5.com.cn/campaign/cny2018/weixinauthorizebefore?operation4cookie=clear
+ * http://yoox.rice5.com.cn/campaign/aprilcarnival/weixinauthorizebefore?operation4cookie=clear
  *
- * http://yoox.rice5.com.cn/campaign/cny2018/weixinauthorizebefore?operation4cookie=get
+ * http://yoox.rice5.com.cn/campaign/aprilcarnival/weixinauthorizebefore?operation4cookie=get
  *
- * http://yoox.rice5.com.cn/campaign/cny2018/weixinauthorizebefore?operation4cookie=store&FromUserName=xxxx&nickname=xx&headimgurl=xx
+ * http://yoox.rice5.com.cn/campaign/aprilcarnival/weixinauthorizebefore?operation4cookie=store&FromUserName=xxxx&nickname=xx&headimgurl=xx
  *
- * http://yoox.rice5.com.cn/cny2018/index.html
+ * http://yoox.rice5.com.cn/aprilcarnival/index.html
  *
- * http://yoox.rice5.com.cn/campaign/cny2018/weixinauthorizebefore?operation4cookie=store&FromUserName=ok0K2vystcQkKolNr3anJd-soVuI&nickname=郭永荣&headimgurl=xx
+ * http://yoox.rice5.com.cn/campaign/aprilcarnival/weixinauthorizebefore?operation4cookie=store&FromUserName=ok0K2vystcQkKolNr3anJd-soVuI&nickname=郭永荣&headimgurl=xx
  *
  * @author 郭永荣
  *        
  */
-class Cny2018Controller extends ControllerBase
+class AprilcarnivalController extends ControllerBase
 {
     // 错误日志
     protected $modelErrorLog = null;
@@ -37,7 +37,7 @@ class Cny2018Controller extends ControllerBase
     protected $serviceLottery = null;
     
     // 活动ID
-    protected $activity_id = '5a61e09f4a4fe47b915e4801';
+    protected $activity_id = '5ad0270c4a4fe4331b46e456';
     
     // 是否需要微信公众号关注
     private $is_need_subscribed = false;
@@ -83,7 +83,7 @@ class Cny2018Controller extends ControllerBase
      */
     public function getcampaignuserinfoAction()
     {
-        // http://yoox.rice5.com.cn/campaign/cny2018/getcampaignuserinfo
+        // http://yoox.rice5.com.cn/campaign/aprilcarnival/getcampaignuserinfo
         try {
             $this->view->disable();
             
@@ -187,7 +187,7 @@ class Cny2018Controller extends ControllerBase
      */
     public function lotteryAction()
     {
-        // http://yoox.rice5.com.cn/campaign/cny2018/lottery?name=guoyongrong&mobile=13564100096&address=xxx
+        // http://yoox.rice5.com.cn/campaign/aprilcarnival/lottery?name=guoyongrong&mobile=13564100096&address=xxx
         try {
             $this->view->disable();
             // 获取活动信息
@@ -327,7 +327,7 @@ class Cny2018Controller extends ControllerBase
      */
     public function recorduserinfoAction()
     {
-        // http://yoox.rice5.com.cn/campaign/cny2018/recorduserinfo?exchange_id=5865f1edfcc2b60a008b456c&identity_id=xxxx&name=guoyongrong&mobile=13564100096&address=shanghai
+        // http://yoox.rice5.com.cn/campaign/aprilcarnival/recorduserinfo?exchange_id=5865f1edfcc2b60a008b456c&identity_id=xxxx&name=guoyongrong&mobile=13564100096&address=shanghai
         try {
             $this->view->disable();
             
@@ -426,118 +426,6 @@ class Cny2018Controller extends ControllerBase
         }
     }
 
-    /**
-     * 发送短信的接口
-     */
-    public function sendsmsAction()
-    {
-        // http://yoox.rice5.com.cn/campaign/cny2018/sendsms?exchange_id=5865f1edfcc2b60a008b456c&identity_id=xxxx&mobile=13564100096
-        try {
-            $this->view->disable();
-            
-            $mobile = trim($this->get('mobile', ''));
-            $exchange_id = trim($this->get('exchange_id', ''));
-            $identity_id = trim($this->get('identity_id', ''));
-            
-            if (empty($exchange_id)) {
-                echo $this->error(- 40451, "中奖ID不能为空");
-                return false;
-            }
-            
-            if (empty($identity_id)) {
-                echo $this->error(- 40452, "身份ID不能为空");
-                return false;
-            }
-            
-            if (empty($mobile)) {
-                echo $this->error(- 40454, "手机号不能为空");
-                return false;
-            }
-            if (! isValidMobile($mobile)) {
-                echo $this->error(- 40455, "手机号格式不正确");
-                return false;
-            }
-            
-            // 判断是否中奖
-            $exchangeInfo = $this->modelLotteryExchange->checkExchangeBy($identity_id, $exchange_id);
-            if (empty($exchangeInfo)) {
-                echo $this->error(- 40458, "该用户无此兑换信息");
-                return false;
-            }
-            // 获取活动用户信息
-            $userInfo = $this->modelActivityUser->getInfoById($exchangeInfo['memo']['activity_user_id']);
-            if (empty($userInfo)) {
-                echo $this->error(- 40458, "该用户无此兑换信息");
-                return false;
-            }
-            
-            // 发送短信
-            // {"code":200,"name":"OK","description":"message queued, status=waiting"}
-            $ret = $this->doSendSms($mobile, $exchangeInfo['prize_virtual_code']);
-            if (! (isset($ret['code']) && $ret['code'] == 200)) {
-                echo $this->error(- 40471, "无法发送短信");
-                return false;
-            }
-            
-            // 记录中奖用户的信息
-            $info = array(
-                'is_valid' => true
-            );
-            $info['contact_mobile'] = $mobile;
-            $this->modelLotteryExchange->updateExchangeInfo($exchange_id, $info);
-            
-            // 发送短信
-            echo ($this->result('处理完成'));
-            return true;
-        } catch (\Exception $e) {
-            $this->modelErrorLog->log($this->activity_id, $e);
-            echo $this->error($e->getCode(), $e->getMessage());
-            return false;
-        }
-    }
-
-    /**
-     * 发送短信的接口
-     */
-    public function testsendsmsAction()
-    {
-        // http://yoox.rice5.com.cn/campaign/cny2018/testsendsms?code=xxxx&mobile=13564100096
-        // http://yoox.rice5.com.cn/campaign/cny2018/testsendsms?code=trxu&mobile=17749762558
-        try {
-            $this->view->disable();
-            
-            $mobile = trim($this->get('mobile', ''));
-            $code = trim($this->get('code', uniqid()));
-            
-            if (empty($mobile)) {
-                echo $this->error(- 40454, "请填写手机号");
-                return false;
-            }
-            if (! isValidMobile($mobile)) {
-                echo $this->error(- 40455, "手机号格式错误");
-                return false;
-            }
-            
-            // 发送短信
-            $ret = $this->doSendSms($mobile, $code);
-            echo ($this->result('处理完成', $ret));
-            return true;
-            
-            $ret = json_decode($curl_response, true);
-            if ($ret['status'] == 'ok') {
-                echo ($this->result('处理完成'));
-                return true;
-            } else {
-                echo $this->error($ret['code'], $ret['message']);
-                return false;
-            }
-        } catch (\Exception $e) {
-            $this->modelErrorLog->log($this->activity_id, $e);
-            echo $this->error($e->getCode(), $e->getMessage());
-            return false;
-        }
-    }
-
     protected function getOrCreateActivityUser($FromUserName, $nickname, $headimgurl, $redpack_user, $thirdparty_user, array $memo = array())
     {
         // 生成活动用户
@@ -562,43 +450,6 @@ class Cny2018Controller extends ControllerBase
             $ret['code_info']['end_time'] = date('Y-m-d', $successInfo['extend_prize_code']['end_time']->sec);
         }
         return $ret;
-    }
-
-    private function doSendSms($phone, $code)
-    {
-        // $code = rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10) . rand(1, 10); // 优惠码
-        $phone = '0086' . $phone; // 手机号码前面必须带0086
-        $message = '【YOOX】恭喜您获得YOOX七夕约惠礼，您的专属优惠码' . $code . '！即日起至2017年8月31日前往YOOX中国官网（http://sep9.cn/npshgf）选购心仪单品，结算时输入该代码，特惠商品除外。感谢您的参与！';
-        $url = 'https://api.spl4cn.com/api/forwardsms/1.php?universe=yoox_cn&key=29ef24d1b10b352939268cbf1a593a7e5dab8672&recipient=' . $phone . '&message=' . $message . '&unicode=1&long=1'; // 链接地址
-        
-        $client = new \GuzzleHttp\Client();
-        $response = $client->get($url, array());
-        $statusCode = $response->getStatusCode();
-        $isSuccessful = ($statusCode >= 200 && $statusCode < 300) || $statusCode == 304;
-        
-        if ($isSuccessful) {
-            $body = $response->getBody();
-            $json = json_decode($body, true);
-            if (JSON_ERROR_NONE !== json_last_error()) {
-                throw new \InvalidArgumentException('Unable to parse JSON data: ');
-            }
-            return $json;
-        } else {
-            throw new \Exception("服务器未有效的响应请求");
-        }
-        return;
-        
-        // 初始化
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_HEADER, 1);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        $data = curl_exec($curl);
-        curl_close($curl);
-        // return json_decode($data, true);
-        var_dump($data);
-        return $data;
     }
 
     protected function incLotteryLimit4Daily($userInfo)

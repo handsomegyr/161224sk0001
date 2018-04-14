@@ -81,7 +81,7 @@ class ExchangeController extends \App\Backend\Controllers\FormController
                 'is_show' => true
             ),
             'search' => array(
-                'is_show' => false
+                'is_show' => true
             ),
             'export' => array(
                 'is_show' => true
@@ -105,7 +105,7 @@ class ExchangeController extends \App\Backend\Controllers\FormController
                 'is_show' => true
             ),
             'search' => array(
-                'is_show' => false
+                'is_show' => true
             ),
             'export' => array(
                 'is_show' => true
@@ -152,8 +152,10 @@ class ExchangeController extends \App\Backend\Controllers\FormController
             'list' => array(
                 'is_show' => true
             ),
-            'search' => array(
-                'is_show' => false
+            'search' => array(                
+                'input_type' => 'select',
+                'is_show' => true,
+                'items' => $this->modelPrize->getAll()
             ),
             'export' => array(
                 'is_show' => true
@@ -275,7 +277,7 @@ class ExchangeController extends \App\Backend\Controllers\FormController
                 'is_show' => true
             ),
             'search' => array(
-                'is_show' => false
+                'is_show' => true
             ),
             'export' => array(
                 'is_show' => true
