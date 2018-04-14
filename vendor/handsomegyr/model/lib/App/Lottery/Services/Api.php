@@ -134,6 +134,7 @@ class Api
                 $exchangeInfo = $this->_exchange->record($activity_id, $rule['prize_id'], $prizeInfo, $prizeCode, $identity_id, $user_info, $identityContact, $isValid, $source, $memo);
                 if (! empty($exchangeInfo)) {
                     $exchangeInfo['exchange_id'] = $exchangeInfo['_id'];
+                    $exchangeInfo['extend_prize_code'] = $prizeCode;
                 } else {
                     throw new \Exception('中奖信息记录失败', - 7);
                 }

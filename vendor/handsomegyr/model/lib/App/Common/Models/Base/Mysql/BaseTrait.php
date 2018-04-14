@@ -388,6 +388,10 @@ trait BaseTrait
         }
         $className = $this->getSource();
         $phql = "SELECT * FROM {$className} WHERE {$conditions['conditions']}";
+		if (! empty($conditions['for_update'])) {
+            $phql = $phql . "  FOR UPDATE ";
+            unset($conditions['for_update']);
+        }
         return array(
             'sql' => $phql,
             'conditions' => $conditions
