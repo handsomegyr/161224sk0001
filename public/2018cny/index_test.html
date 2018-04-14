@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="img/fav.ico">
+
+    <title>YOOX新年上上签</title>
+
+    <!-- External css -->
+    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+    <link href="css/video-js.css" rel="stylesheet">
+    <!-- Custom styles for this web -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- baidu -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8d9701e1e8eb01a92cb1f6cebdf4e3c9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+</head>
+
+<body>
+
+<section class="hide" id="J_main">
+
+    <!--main content start-->
+    <section class="pages" id="J_pages">
+        <section class="page page1">
+            <img class="page1-title" src="img/page1-title.png">
+            <div class="page1-box">
+                <video id="J_happyVideoss" class="video" width="100%" height="auto"
+                       webkit-playsinline="true"
+                       x-webkit-airplay="true"
+                       playsinline="true"
+                       x5-video-player-type="h5"
+                       x5-video-orientation="h5"
+                       x5-video-player-fullscreen="true"
+                       preload="auto"
+                       loop 
+                       autoplay="autoplay">
+                    <source src="res/happy.480.mp4.mp4" type="video/mp4">
+                </video>
+               
+            </div>
+        </section>
+
+        <section class="page page2">
+            <img class="page2-title" src="img/page2-title.png">
+            <div class="page2-box">
+                <video id="J_pinkVideo" class="video" width="100%" height="auto"
+                       webkit-playsinline="true"
+                       x-webkit-airplay="true"
+                       playsinline="true"
+                       x5-video-player-type="h5"
+                       x5-video-orientation="h5"
+                       x5-video-player-fullscreen="true"
+                       preload="auto"
+                       autoplay="autoplay">
+                    <source src="res/pink.mp4" type="video/mp4">
+                    <source src="res/pink.webm" type="video/webm">
+                    <source src="res/pink.ogv" type="video/ogg">
+                </video>
+                <i class="icon-hand"></i>
+            </div>
+        </section>
+    </section>
+    <!--main content end-->
+
+    <!--nav start-->
+    <nav id="nav">
+        <div class="nav-bar">
+            <a class="nav-bar-item" href="javascript:;" id="J_ruleTrigger" onclick="_hmt.push(['_trackEvent', 'Huodongguizhe', 'click', 'open huodongguize']);">活动详情</a>
+            <a class="nav-bar-item" href="
+http://help.yoox.cn/system/selfservice.controller?CMD=BROWSE_TOPIC&CONFIGURATION=1106&COUNTRY=cn&LANGUAGE=zh&PARTITION_ID=1&TOPIC_ID=1025&USERTYPE=1&secureFlag=false#article-2074
+" onclick="_hmt.push(['_trackEvent', 'Btn_aboutyoox', 'click', 'open aboutyoox']);">关注YOOX</a>
+            <a class="nav-bar-item" href="http://www.yoox.cn" onclick="_hmt.push(['_trackEvent', 'Btn_yooxcn', 'click', 'open yooxcn']);">直达YOOX</a>
+        </div>
+    </nav>
+    <!--nav end-->
+
+    <section class="alert alert-result alert-result1" id="J_alertResult1">
+        <div class="alert-main">
+            <!--<i class="icon-close-black alert-close J_lotteryAgain" onclick="_hmt.push(['_trackEvent', 'Btn_close_winner', 'click', 'close winner box']);"></i>-->
+            <!-- sw -->
+            <div class="alert-inner">
+                <div class="result-detail">
+                    <div class="result-title">
+                        <p>恭喜你抽到YOOX新年上上签</p>
+                        <p class="number-tips">今天你还有 <span class="lottery_sum_number"></span> 次机会</p>
+                    </div>
+                    <div class="result-img">
+                        <img src="img/result-img0.jpg">
+                    </div>
+                    <div class="result-info">
+                        <div class="result-text"></div>
+                        <div class="label">恭喜你抽到了惊喜奢品！请输入以下信息：</div>
+                        <div class="label-input">
+                            <span>姓名: </span>
+                            <input class="border-input" name="name" type="text" placeholder="" value="">
+                        </div>
+                        <div class="label-input">
+                            <span>手机: </span>
+                            <input class="border-input" name="mobile" type="text" placeholder="" value="">
+                        </div>
+                        <div class="label-input">
+                            <span>地址: </span>
+                            <input class="border-input" name="address" type="text" placeholder="" value="">
+                        </div>
+                        <div class="label">
+                            <button class="btn-send" id="J_sendInfo" onclick="_hmt.push(['_trackEvent', 'Btn_submit_winner', 'click', 'submit info in winner box']);">提交信息</button>
+                            <!-- loading msg -->
+                            <div class="send-loading">
+                                <img src="img/sendloading.gif" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-tips">
+                        <div class="label">下载 YOOX APP<br>第一时间获取特惠信息</div>
+                        <div class="download-group">
+                            <a class="" onclick="_hmt.push(['_trackEvent', 'btn-downandroid', 'click', 'down load ios in winner box']);" href="http://android.myapp.com/myapp/detail.htm?apkName=com.yoox"><i class="icon-android"></i>ANDROID下载</a>
+                            <a class="" onclick="_hmt.push(['_trackEvent', 'btn-downios', 'click', 'down load ios in winner box']);" href="https://itunes.apple.com/app/id337727153?mt=8"><i class="icon-ios"></i>ios下载</a>
+                        </div>
+                        <div class="flex-box options-box">
+                            <button class="flex1 options-btn J_lotteryAgain" onclick="_hmt.push(['_trackEvent', 'Btn_winner_again', 'click', 'open again in winner box']);">再抽一次</button>
+                            <button class="flex1 options-btn J_shareTrigger" onclick="_hmt.push(['_trackEvent', 'Btn_winner_share', 'click', 'share in winner box']);">分享上上签</button>
+                            <button class="flex1 options-btn J_saveTrigger" onclick="_hmt.push(['_trackEvent', 'Btn_winner_save', 'click', 'save in winner box']);">保存此图</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alert alert-result alert-result2" id="J_alertResult2">
+        <div class="alert-main">
+            <!--<i class="icon-close-black alert-close J_lotteryAgain" onclick="_hmt.push(['_trackEvent', 'Btn_close_juan', 'click', 'close quan box']);"></i>-->
+            <div class="alert-inner">
+                <div class="result-detail">
+                    <div class="result-title">
+                        <p>恭喜你抽到YOOX新年上上签</p>
+                        <p class="number-tips">今天你还有 <span class="lottery_sum_number"></span> 次机会</p>
+                    </div>
+                    <div class="result-img">
+                        <img src="img/result-img0.jpg">
+                    </div>
+                    <div class="result-info">
+                        <div class="result-text"></div>
+                        <p class="label">你的限时 <span class="gift-name">YOOX 9折礼券</span> 优惠代码</p>
+                        <div class="label">
+                            <input id="J_code" class="border-input" name="code" type="text" readonly="" placeholder="优惠码" value="优惠码：CDS3322323">
+                        </div>
+                        <p class="label">复制本优惠代码或截屏此页</p>
+                    </div>
+                    <div class="result-tips">
+                        <div class="label">下载 YOOX APP<br>第一时间获取特惠信息</div>
+                        <div class="flex-box download-group">
+                            <a class="flex1" onclick="_hmt.push(['_trackEvent', 'btn-downandroid', 'click', 'down load ios in quan box']);" href="http://android.myapp.com/myapp/detail.htm?apkName=com.yoox"><i class="icon-android"></i>ANDROID下载</a>
+                            <a class="flex1" onclick="_hmt.push(['_trackEvent', 'btn-downios', 'click', 'down load ios in quan box']);" href="https://itunes.apple.com/app/id337727153?mt=8"><i class="icon-ios"></i>ios下载</a>
+                        </div>
+                        <div class="flex-box options-box">
+                            <button class="flex1 options-btn J_lotteryAgain" onclick="_hmt.push(['_trackEvent', 'Btn_quan_again', 'click', 'open again in quan box']);">再抽一次</button>
+                            <button class="flex1 options-btn J_shareTrigger" onclick="_hmt.push(['_trackEvent', 'Btn_quan_share', 'click', 'share in quan box']);">分享上上签</button>
+                            <button class="flex1 options-btn J_saveTrigger" onclick="_hmt.push(['_trackEvent', 'Btn_quan_save', 'click', 'save in quan box']);">保存此图</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="alert alert-rule" id="J_alertRule">
+        <div class="alert-main">
+            <i class="icon-close icon-close-white alert-close J_closeAlert"></i>
+            <div class="alert-inner">
+                <div class="rule-detail">
+                    <img class="rule-logo" src="img/alert-rule-logo.png">
+                    <div class="rule-title">规则</div>
+                    <div class="rule-text">
+                        <p><b>如何参与：</b></p>
+                        <p>1，根据金手指的指示，点击雪球上的不同地方参与活动；</p>
+                        <p>2，如果抽取到优惠代码，复制或截屏代码页面，并在2018年2月X日24点前在 YOOX.CN 使用；如果抽取到实物奖品，按照指示填写您的收货信息；活动结束后一周内会统一寄给中奖者；</p>
+                        <p>3，活动期间，每人每天有 3 次参与活动的机会</p>
+                        <br>
+                        <p><b>活动时间：</b></p>
+                        <p>2018 年 1 月 31 日- 2018 年 2 月 21 日</p>
+                        <br>
+                        <p><b>折扣代码：</b></p>
+                        <p>每个代码仅可使用一次，仅限在 YOOX 中国站 APP 使用，清仓商品和部分特惠商品不可使用</p>
+                        <br>
+                        <p><b>联系我们：</b></p>
+                        <p>如有任何疑问，请联系 YOOX 官方微信：yooxyooxyoox</p>
+                    </div>
+                    <video id="J_rule_video" class="rule-box" width="100%" height="auto"
+                           webkit-playsinline="true"
+                           x-webkit-airplay="true"
+                           playsinline="true"
+                           x5-video-player-type="h5"
+                           x5-video-orientation="h5"
+                           x5-video-player-fullscreen="true"
+                           preload="auto"
+                           autoplay="autoplay">
+                        <source src="res/happy.mp4" type="video/mp4">
+                        <source src="res/happy.webm" type="video/webm">
+                        <source src="res/happy.ogv" type="video/ogg">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alert alert-tips" id="J_alertTips">
+        <div class="alert-main">
+            <i class="icon-close alert-close J_closeAlert"></i>
+            <div class="alert-inner">
+                <div class="tips-detail text-center">
+                    <div class="tips-title">很抱歉！</div>
+                    <div class="tips-info border-box">— <span class="tips-info-text"></span> —</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alert alert-share" id="J_alertShare">
+        <div class="alert-cover"></div>
+        <div class="alert-main J_closeAlert">
+            <div class="share-detail">
+                <img src="img/alert-share.png">
+            </div>
+        </div>
+    </section>
+
+    <section class="alert alert-save" id="J_alertSave">
+        <div class="alert-cover"></div>
+        <div class="alert-main J_closeAlert">
+            <div class="save-detail">
+                <img src="img/result-bg0.jpg">
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<section class="loading" id="J_loading">
+    <div class="loader">
+        <div class="loader-inner ball-triangle-path">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</section>
+
+<!-- common script for all pages -->
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/jquery.cookie.js"></script>
+<script src="js/lib/jweixin-1.0.0.js"></script>
+
+<script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+
+        function audioAutoPlay() {
+
+        var audio = document.getElementById('J_happyVideoss');
+
+        audio.play();
+
+        document.addEventListener("WeixinJSBridgeReady", function() {
+
+        audio.play();
+        alert('ddd');
+
+        }, false);
+
+        }
+
+        audioAutoPlay();
+
+        }); 
+    </script>
+<script src="js/global.js"></script>
+
+
+</body>
+</html>

@@ -399,6 +399,7 @@ function registerServices($di)
              * ));
              */
             
+			
             $router->add('/:controller/:action', array(
                 'module' => 'cny2018',
                 'controller' => 1,
@@ -411,6 +412,20 @@ function registerServices($di)
                 'action' => 'index'
             ));
             
+			/**
+			$router->add('/:controller/:action', array(
+                'module' => 'aprilcarnival',
+                'controller' => 1,
+                'action' => 2
+            ));
+            
+            $router->add('/', array(
+                'module' => 'aprilcarnival',
+                'controller' => 'index',
+                'action' => 'index'
+            ));
+			**/
+			
             return $router;
         };
         

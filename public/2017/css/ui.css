@@ -1,0 +1,183 @@
+/* CSS Document */
+* { margin:0px ; padding:0px;}
+body { font-family: 'Microsoft Yahei'; font-size:12px; background: #996633;}
+
+a { text-decoration: none; }
+img { border: none; }
+
+/* common */
+#logo	{ 
+
+	position: absolute; z-index: 100; right: 25px; top: 25px; 
+	width: 96px;
+	height: 96px;
+}
+
+#logo2	{ 
+
+	position: absolute; z-index: 100; left: 25px; top: 25px; 
+	width: 96px;
+	height: 96px;
+}
+
+#Absolute { position: absolute; }
+
+/* homepage */
+
+#HomePage,#TestPage  { 
+	position: relative; width:100%; height: 100%; 
+	background: url('../img/bg.jpg');
+	position:fixed;
+	top:0;
+	left:0;
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+}
+
+#ResPage  { 
+	position: relative; width:100%; height: 100%; 
+	background: url('../img/nbg.jpg');
+	position:fixed;
+	top:0;
+	left:0;
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+}
+
+.liangtou { width: 191px; height: 291px; z-index: 10; top: 86px; left: 45px; }
+.xiaojitui { width: 132px; height: 112px; z-index: 10; top:206px; right:99px;   }
+.dajitui { width: 220px; height: 192px; z-index: 10; top:456px; left:-10px;   }
+
+.cat {width: 417px; height: 369px; z-index: 9;  top: 322px; left: 109px; }
+.iphone {width: 185px; height: 238px; z-index: 9;  top: 422px; right: -20px; }
+
+
+.guang { width: 640px; height: 589px; z-index: 8; top: -80px;  }
+
+.title-start { width: 640px; height:829px; top: 150px; z-index: 11;   }
+.btn-start { width: 386px; height: 258px; z-index: 12; top:755px; left:154px;    }
+.btn-start-2 { width: 750px; height: 258px; z-index: 12; top:810px;  text-align: center;   }
+
+
+/* test page */
+#TestPage {
+
+
+	position: relative; width:100%; height: 100%; 
+	background: url('../img/nbg.jpg');
+	position:fixed;
+	top:0;
+	left:0;
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+
+}
+
+
+.countDownList { width:544px; height: 25px; z-index: 10;top: 40px; left:40px;   }
+
+.countDownList li { 
+	list-style: none; width: 25px; 
+	height: 25px; float: left; 
+	background: url('../img/countdown.png') no-repeat;
+}
+
+.TestContent { width: 640px; height: 750px; top: 104px;  left: 55px; }
+
+.testBox { 
+	width: 640px; 
+	height: 750px;
+	float: left; 
+ }
+
+
+ .show_title { 
+ 	width: 435px; height: 60px; left: 72px; 
+ 	z-index: 100;
+ 	padding: 30px;
+ 	background: #fce089;
+ 	font-size: 30px; color: #000;
+ 
+ }
+.show_line {
+	width: 435px; height: 60px; left: 82px; top: 10px; 
+ 	z-index: 99;
+ 	padding: 30px;
+ 	background: url('../img/bg-line.png') no-repeat;
+
+}
+.show_number {
+	width: 50px; height:50px; left:50px; top: -20px; 
+ 	z-index: 101;
+ 	background: #663300;
+ 	border-radius: 25px;
+ 	color: #fff;
+ 	font-size: 22px;
+ 	text-align: center;
+ 	line-height: 50px;
+ 	
+}
+
+.style-list {  
+	position: relative; margin: 0px auto; 
+	width: 500px; top: 160px; left:72px;
+	
+}
+
+
+
+dt.qustion { float: left; color: #000; margin: 0px 10px 10px 0px; width: 230px; height: 208px; padding: 5px;  }
+dt.qustion p { text-align: center; font-size: 28px;  }
+
+
+
+.next-panel { width: 280px; height:92px;  z-index: 10;bottom:150px; left:235px; }
+.next-panel a { display: block; 
+	width: 280px; height: 92px; 
+	background: url('../img/next.png') no-repeat; 
+	text-indent: -100px; overflow: hidden;
+}
+
+dt.question-list { width: 372px; margin-left: 60px; height: 35px; line-height: 35px; font-size: 20px; background: #ffcc66;}
+
+
+.resText { width: 640px;
+ height: 100px;   top: 115px;
+ font-size: 45px;
+ color: #f4d678;
+ -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000;
+  font-weight: bold;
+  text-align: center;
+
+
+}
+.resText span { font-size: 70px; }
+.resImg { 
+	width: 750px; text-align: center; top: 240px; right: -22px;
+ }
+
+ .resBtn { width: 750px; bottom: 100px; z-index: 100; text-align: center; }
+ .resBtn img { margin-bottom: 10px; }
+
+
+ #pops { position: absolute; width: 750px; background: #000; z-index: 10110; display: none; }
+ .pop-body { position: relative; padding-top: 100px; width: 640px; height: 900px;margin: 0px auto;  }
+ .pop-title { width: 640px; height: 30px; line-height: 30px; color: #f4d678;
+ -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000;
+  font-weight: bold;
+  text-align: center; 
+  font-size: 30px;
+}
+.pop-img { width: 550px; margin: 0px auto; padding-top: 30px;  }
+
+#pops-close { position: absolute; z-index: 10; 
+width: 100px; height: 100px;
+	 border-radius: 50px; background: #fff; color: #000; 
+	text-align: center; line-height: 100px;
+	font-size: 30px; top: 20px; right: 20px;
+	 }
